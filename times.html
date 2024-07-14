@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logos/icon/logo2.ico" type="image/x-icon">
+    <title>OPEN HOURS | Little Cino</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .bgimg-1 h1 {
+            font-size: 48px;
+        }
+
+        /* Navbar */
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 0px; /* Increased top margin to move content down */
+            margin-bottom: 0px; /* Added bottom margin for space */
+        }
+
+        .centered-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px); /* Adjust based on the height of the navbar */
+        }
+
+        .opening-hours-container {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+
+
+        .opening-hours-container p {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #555; /* Changed color to a darker shade for better contrast */
+            margin-bottom: 30px; /* Added margin to create space below the paragraph */
+            line-height: 1.6; /* Increased line height for better readability */
+        }
+
+        .digital-clock-container {
+            text-align: center;
+            margin-bottom: 20px; /* Added space between clock and opening hours */
+        }
+
+        .digital-clock {
+            font-size: 32px; /* Larger font size for clock */
+            font-weight: bold; /* Made the text bold */
+            padding: 10px 20px; /* Adjusted padding for better fit */
+            background-color: #888888; /* Light background */
+            color: white; /* Text color */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            display: inline-block; /* Ensured it aligns horizontally */
+        }
+
+        .digital-clock-label {
+            font-size: 14px; /* Small font size for label */
+            color: #555; /* Darker color for label */
+            margin-top: 5px; /* Added space between clock and label */
+        }
+
+        .digital-clock:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+        }
+
+    table {
+        border-collapse: collapse;
+        margin: 0 auto; /* Center the table */
+        width: 100%; /* Full width table */
+        max-width: 450px; /* Maximum width to keep it responsive */
+        min-width: 320px;
+    }
+
+    #activerow {
+        border: 2px solid #8CC63F; /* Thicker border for active row */
+        background-color: #f5f5f5; /* Light background for active row */
+    }
+
+    #activerow > td {
+        color: #8CC63F;
+        font-weight: 600;
+    }
+
+    #activerow > td > span {
+        color: #8CC63F;
+    }
+
+    .opening-hours {
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increased shadow for more depth */
+        background-color: #fff; /* White background */
+        padding: 20px; /* Increased padding */
+        border-radius: 8px; /* Rounded corners */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .opening-hours:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    }
+
+    .fvl-d > td {
+        font-size: 14px; /* Increased font size */
+        font-weight: 400;
+        letter-spacing: 1.2px;
+        color: #555; /* Changed color to a darker shade for better contrast */
+        text-transform: uppercase;
+        padding: 1em;
+        border-bottom: 1px solid #e0e0e0; /* Added bottom border for separation */
+    }
+
+    .fvl-d > td > span {
+        font-size: 14px; /* Increased font size */
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        color: #555; /* Changed color to a darker shade for better contrast */
+        text-transform: uppercase;
+    }
+
+
+    /* Sidebar adjustments */
+    #mySidebar {
+        z-index: 999;
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #333;
+        color: #f9f9f9;
+        padding: 30px 0;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    footer p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    footer a {
+        color: #f9f9f9;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    @media screen and (max-width: 382px) {
+        .fvl-d > td {
+            font-size: 14px;
+            padding: 15px 5px;
+        }
+
+        #activerow {
+            border: none;
+            background-color: #8CC63F;
+        }
+
+        #activerow > td {
+            color: white;
+            font-weight: 600;
+        }
+
+        #activerow > td > span {
+            color: white;
+        }
+    }
+
+
+    @media screen and (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+
+        .container h2 {
+            font-size: 28px;
+        }
+
+        .address p {
+            font-size: 16px;
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="index.html" class="w3-bar-item w3-button w3-wide">LITTLE CINO</a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+        <a href="index.html#menu" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MENU</a>
+        <a href="location.html" class="w3-bar-item w3-button"><i class="fa fa-map-marker"></i> MAP</a>
+        <a href="index.html#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+        <a href="about.html" class="w3-bar-item w3-button"><i class="fa fa-building"></i> ABOUT US</a>
+        <a href="Contact.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+  
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+</div>
+
+<div class="container centered-container">
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none;" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+    <a href="index.html#menu" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MENU</a>
+    <a href="location.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-map-marker"></i> MAP</a>
+    <a href="index.html#work" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+    <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button"> <i class="fa fa-building"></i> ABOUT US</a>
+    <a href="Contact.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+</nav>
+
+<div class="opening-hours-container">
+    <div class="digital-clock-container">
+        <div class="digital-clock" id="digitalClock"></div>
+        <div class="digital-clock-label">Current Time</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var period = hours >= 12 ? 'PM' : 'AM';
+
+            // Convert hours from 24-hour to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // hour '0' should be '12'
+
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            var timeString = hours + ':' + minutes + ':' + seconds + ' ' + period;
+            document.getElementById('digitalClock').innerHTML = timeString;
+        }
+
+        setInterval(updateClock, 1000); // Update every second
+    </script>
+
+
+    <div class="opening-hours">
+        <table>
+            <tr class="monday fvl-d">
+                <td><span>Monday</span></td>
+                <td>8.00AM - 2.00PM</td>
+            </tr>
+            <tr class="tuesday fvl-d">
+                <td><span>Tuesday</span></td>
+                <td>8.00AM - 2.00PM</td>
+            </tr>
+            <tr class="wednesday fvl-d">
+                <td><span>Wednesday</span></td>
+                <td>8.00AM - 2.00PM</td>
+            </tr>
+            <tr class="thursday fvl-d">
+                <td><span>Thursday</span></td>
+                <td>8.00AM - 2.00PM</td>
+            </tr>
+            <tr class="friday fvl-d">
+                <td><span>Friday</span></td>
+                <td>8.00AM - 2.00PM</td>
+            </tr>
+            <tr class="saturday fvl-d">
+                <td><span>Saturday</span></td>
+                <td>closed</td>
+            </tr>
+            <tr class="sunday fvl-d">
+                <td><span>Sunday</span></td>
+                <td>closed</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="w3-container">
+        <p>Follow Us:</p>
+        <div class="w3-xlarge w3-section">
+            <a href="https://www.facebook.com/cinoloughborough" class="w3-button w3-black"><i class="fa fa-facebook-official"></i></a>
+            <a href="https://www.instagram.com/cino_cafe_loughborough/?hl=en" class="w3-button w3-black"><i class="fa fa-instagram"></i></a>
+        </div>
+        <p>Created by | <a href="https://www.linkedin.com/in/harry-paolella-722723266/?originalSubdomain=uk" title="Harry Linkdin" target="_blank" class="w3-hover-text-green">Harry Paolella</a></p>
+    </div>
+</footer>
+
+<script>
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+        } else {
+            mySidebar.style.display = 'block';
+        }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+
+    // Highlight the current day in the opening hours table
+    const time = () => {
+        const monday = document.querySelector('.monday');
+        const tuesday = document.querySelector('.tuesday');
+        const wednesday = document.querySelector('.wednesday');
+        const thursday = document.querySelector('.thursday');
+        const friday = document.querySelector('.friday');
+        const saturday = document.querySelector('.saturday');
+        const sunday = document.querySelector('.sunday');
+
+        switch (new Date().getDay()) {
+            case 1:
+                monday.setAttribute("id", "activerow");
+                break;
+            case 2:
+                tuesday.setAttribute("id", "activerow");
+                break;
+            case 3:
+                wednesday.setAttribute("id", "activerow");
+                break;
+            case 4:
+                thursday.setAttribute("id", "activerow");
+                break;
+            case 5:
+                friday.setAttribute("id", "activerow");
+                break;
+            case 6:
+                saturday.setAttribute("id", "activerow");
+                break;
+            case 0:
+                sunday.setAttribute("id", "activerow");
+                break;
+        }
+    }
+    time();
+</script>
+
+</body>
+</html>

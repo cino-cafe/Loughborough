@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Little Cino Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/logos/icon/logo2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif;
+        }
+        body, html {
+            height: 100%;
+            line-height: 1.8;
+        }
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url("images/inside/tables2.jpg");
+            min-height: 70%;
+            background-repeat: no-repeat;
+        }
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+        .mySlides {
+            display: none;
+        }
+        .w3-tag, .fa {
+            cursor: pointer;
+        }
+        .w3-tag {
+            height: 15px;
+            width: 15px;
+            padding: 0;
+            margin-top: 6px;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        footer {
+            background-color: #333;
+            color: #f9f9f9;
+            padding: 30px 0;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        footer a {
+            color: #f9f9f9;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .content-container {
+            padding: 20px;
+        }
+        .about-us-section {
+            padding: 50px 15px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .about-us-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .about-us-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #666;
+        }
+        .about-us-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .about-us-images img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="index.html" class="w3-bar-item w3-button w3-wide">LITTLE CINO</a>
+            <div class="w3-right w3-hide-small">
+                <a href="index.html#menu" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MENU</a>
+                <a href="location.html" class="w3-bar-item w3-button"><i class="fa fa-map-marker"></i> MAP</a>
+                <a href="index.html#Hours" class="w3-bar-item w3-button"><i class="fa fa-clock-o"></i> OPEN HOURS</a>
+                <a href="index.html#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+                <a href="Contact.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+            </div>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+        <a href="index.html#menu" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MENU</a>
+        <a href="location.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-map-marker"></i> MAP</a>
+        <a href="index.html#Hours" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-clock-o"></i> OPEN HOURS</a>
+        <a href="index.html#work" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+        <a href="Contact.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </nav>
+
+    <!-- About Us Section -->
+    <div class="content-container">
+        <div class="about-us-section" id="about">
+            <h1>About Us</h1>
+            <p>Welcome to <b>Little Cino Cafe</b>, we've got the perfect atmosphere for relaxation and enjoyment, where you can enjoy delicious food, great coffee, and good company.</p>
+            <p>Our team is passionate about great food and excellent service. So, come join us and experience the Little Cino difference. We look forward to serving you!</p>
+            <h1>Our History</h1>
+            <p>Little Cino cafe is the <b>new opening</b> of our old business called <b>Cino Cafe</b> which was located at the carllion court in lougbough town.</p>
+            <p>Cino cafe operated successfully for 20 years, from 2003 to 2023</p>
+            <div class="about-us-images">
+                <img src="images/History/cino-cafe2.jpg" alt="Coffee">
+                <img src="images/History/Dom.jpg" alt="Pastries">
+                <img src="images/History/inside.jpg" alt="Cafe Interior">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="w3-container">
+            <p>Follow Us:</p>
+            <div class="w3-xlarge w3-section">
+                <a href="https://www.facebook.com/cinoloughborough" class="w3-button w3-black"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://www.instagram.com/cino_cafe_loughborough/?hl=en" class="w3-button w3-black"><i class="fa fa-instagram"></i></a>
+            </div>
+            <p>Created by | <a href="https://www.linkedin.com/in/harry-paolella-722723266/?originalSubdomain=uk" title="Harry Linkdin" target="_blank" class="w3-hover-text-green">Harry Paolella</a></p>
+        </div>
+    </footer>
+
+<script>
+    var mySidebar = document.getElementById("mySidebar");
+    
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+        } else {
+            mySidebar.style.display = 'block';
+        }
+    }
+    
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

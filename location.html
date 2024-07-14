@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logos/icon/logo2.ico" type="image/x-icon">
+    <title>Map | Little Cino</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .bgimg-1 h1 {
+            font-size: 48px;
+        }
+
+        /* Navbar */
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        .container2 {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 80px; /* Increased top margin to move content down */
+            margin-bottom: 50px; /* Added bottom margin for space */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 0px; /* Increased top margin to move content down */
+            margin-bottom: 0px; /* Added bottom margin for space */
+        }
+
+        .container h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .address {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .address p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Sidebar adjustments */
+        #mySidebar {
+            z-index: 999;
+            position: fixed;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #f9f9f9;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #f9f9f9;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .container h2 {
+                font-size: 28px;
+            }
+
+            .address p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="index.html" class="w3-bar-item w3-button w3-wide">LITTLE CINO</a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+        <a href="index.html#menu" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MENU</a>
+        <a href="index.html#Hours" class="w3-bar-item w3-button"><i class="fa fa-clock-o"></i> OPEN HOURS</a>
+        <a href="index.html#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+        <a href="about.html" class="w3-bar-item w3-button"><i class="fa fa-building"></i> ABOUT US</a>
+        <a href="Contact.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+  
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+</div>
+
+<div class="container">
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none; z-index: 998; position: fixed;" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+    <a href="index.html#menu" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MENU</a>
+    <a href="index.html#Hours" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-clock-o"></i> OPEN HOURS</a>
+    <a href="index.html#work" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+    <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button"> <i class="fa fa-building"></i> ABOUT US</a>
+    <a href="Contact.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+</nav>
+</div>
+
+<!-- Container for location details -->
+<div class="container2">
+    <div class="address">
+        <h2>Where to Find us</h2>
+        <p><strong>Address:</strong></p>
+        <p>1 Monarch Way, Loughborough,<br>
+            LE11 5XG,<br>
+            England</p>
+    </div>
+
+    <div class="map-container" style="background-image: url('images/Map/Map.jpg')">
+        <a href="https://www.google.co.uk/maps/place/Tooley%E2%80%99s+Caf%C3%A9+%26+Catering+Company/@52.7831395,-1.211871,17z/data=!4m6!3m5!1s0x4879e7acbf23c171:0xd1d0476bb2ef8d79!8m2!3d52.7838638!4d-1.2117691!16s%2Fg%2F11h8hbq70t?entry=ttu" target="_blank">
+            <div class="map-overlay">View Map</div>
+        </a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="w3-container">
+        <p>Follow Us:</p>
+        <div class="w3-xlarge w3-section">
+            <a href="https://www.facebook.com/cinoloughborough" class="w3-button w3-black"><i class="fa fa-facebook-official"></i></a>
+            <a href="https://www.instagram.com/cino_cafe_loughborough/?hl=en" class="w3-button w3-black"><i class="fa fa-instagram"></i></a>
+        </div>
+        <p>Created by | <a href="https://www.linkedin.com/in/harry-paolella-722723266/?originalSubdomain=uk" title="Harry Linkdin" target="_blank" class="w3-hover-text-green">Harry Paolella</a></p>
+    </div>
+</footer>
+
+<script>
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+            mySidebar.style.display = 'none';
+        } else {
+            mySidebar.style.display = 'block';
+        }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

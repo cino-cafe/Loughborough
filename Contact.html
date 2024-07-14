@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Little Cino</title>
+    <link rel="shortcut icon" href="images/logos/icon/logo2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: "Arial", sans-serif;
+            line-height: 1.6;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            min-height: 100vh; /* Ensure body extends to at least viewport height */
+        }
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .bgimg-1 h1 {
+            font-size: 48px;
+        }
+
+        /* Navbar */
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+
+        /* Sidebar adjustments */
+        #mySidebar {
+            z-index: 999;
+            position: fixed;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 0px; /* Increased top margin to move content down */
+            margin-bottom: 0px; /* Added bottom margin for space */
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            background-color: #f2f2f2;
+            padding: 50px 0; /* Adjust padding as needed */
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact-section .w3-container {
+            padding: 0 16px; /* Adjust padding as needed */
+            max-width: none; /* Remove max-width restriction */
+        }
+
+        .contact-section h3 {
+            margin-bottom: 10px; /* Reduce margin bottom for heading */
+            font-size: 32px; /* Reduce font size for heading */
+            color: #333;
+        }
+
+        .contact-section p {
+            margin-bottom: 20px; /* Reduce margin bottom for paragraphs */
+            font-size: 16px; /* Reduce font size for paragraphs */
+            color: #666;
+        }
+
+        .contact-info {
+            margin-top: 32px; /* Reduce top margin for contact info */
+            text-align: left;
+        }
+
+        .contact-info p {
+            font-size: 16px; /* Reduce font size for contact info */
+            color: #333;
+            margin-bottom: 8px; /* Reduce margin bottom for contact info */
+        }
+
+        .contact-form {
+            margin-top: 32px; /* Reduce top margin for contact form */
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px; /* Reduce bottom margin for inputs */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical; /* Allow vertical resizing of textarea */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        .contact-form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+        .contact-form button:disabled {
+            cursor: not-allowed;
+            background-color: #ccc;
+        }
+
+        .logo img {
+            width: 180px; /* Adjust the width as per your logo size */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Add margin bottom to logo */
+        }
+
+        .loading-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #f9f9f9;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #f9f9f9;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 600px) {
+            .contact-section h3 {
+                font-size: 24px; /* Further reduce font size for smaller screens */
+            }
+
+            .contact-info p,
+            .contact-section p {
+                font-size: 14px; /* Further reduce font size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="index.html" class="w3-bar-item w3-button w3-wide">LITTLE CINO</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+                <a href="index.html#menu" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MENU</a>
+                <a href="location.html" class="w3-bar-item w3-button"><i class="fa fa-map-marker"></i> MAP</a>
+                <a href="index.html#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+                <a href="about.html" class="w3-bar-item w3-button"><i class="fa fa-building"></i> ABOUT US</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Sidebar on small screens when clicking the menu icon -->
+    <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none;" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+        <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+        <a href="index.html#menu" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-cutlery"></i> MENU</a>
+        <a href="location.html" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-map-marker"></i> MAP</a>
+        <a href="index.html#work" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+        <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button"> <i class="fa fa-building"></i> ABOUT US</a>
+    </nav>
+
+
+    
+        <div class="contact-section">
+            <div class="w3-container">
+                <div class="logo">
+                    <img src="images/logos/logo2.png" alt="Logo">
+                </div>
+                <h3>CONTACT</h3>
+                <p>Let's get in touch. Send us a message:</p>
+                <div class="contact-info">
+                    <p><i class="fa fa-map-marker fa-fw w3-margin-right"></i> Loughborough, UK</p>
+                    <p><i class="fa fa-phone fa-fw w3-margin-right"></i> Phone: +44 7889 347171</p>
+                    <p><i class="fa fa-envelope fa-fw w3-margin-right"></i> Email: cino.cafe.ai@gmail.com</p>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <p><input class="w3-input" type="text" placeholder="Full Name" required id="fullname" name="from_name"></p>
+                    <p><input class="w3-input" type="email" placeholder="Email" required id="email" name="reply_to"></p>
+                    <p><input class="w3-input" type="text" placeholder="Title" required id="title" name="title"></p>
+                    <p><textarea class="w3-input" placeholder="Message" required id="message" name="message" rows="4"></textarea></p>
+                    <p><button type="submit" id="submit-btn"><i class="fa fa-paper-plane"></i> SEND MESSAGE</button></p>
+                </form>
+                <p class="loading-message" id="loading-message">Loading...</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="w3-container">
+                <p>Follow Us:</p>
+                <div class="w3-xlarge w3-section">
+                    <a href="https://www.facebook.com/cinoloughborough" class="w3-button w3-black"><i class="fa fa-facebook-official"></i></a>
+                    <a href="https://www.instagram.com/cino_cafe_loughborough/?hl=en" class="w3-button w3-black"><i class="fa fa-instagram"></i></a>
+                </div>
+                <p>Created by | <a href="https://www.linkedin.com/in/harry-paolella-722723266/?originalSubdomain=uk" title="Harry Linkdin" target="_blank" class="w3-hover-text-green">Harry Paolella</a></p>
+            </div>
+        </footer>
+
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("bO3YR9VLVnM7PnpAs");
+        })();
+        
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Check if all fields are filled out
+            if (!validateForm()) {
+                return;
+            }
+            
+            // Show loading message
+            var loadingMessage = document.getElementById('loading-message');
+            loadingMessage.style.display = 'block';
+            
+            // Disable submit button to prevent double submission
+            var submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            
+            // Collect form data
+            var formData = {
+                from_name: document.getElementById('fullname').value,
+                from_email: document.getElementById('email').value,
+                title: document.getElementById('title').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Introduce a 2-second delay before sending email
+            setTimeout(function() {
+                // Send email using EmailJS
+                emailjs.send("service_o2aa31d", "template_1f0s04e", formData)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        // Redirect to another page upon successful submission
+                        window.location.href = 'success.html'; // Replace with your desired success page
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        // Handle errors here (optional)
+                    })
+                    .finally(function() {
+                        // Enable submit button after 5 seconds
+                        setTimeout(function() {
+                            submitBtn.disabled = false;
+                            loadingMessage.style.display = 'none';
+                        }, 5000);
+                    });
+            },  1500);
+        });
+        
+        function validateForm() {
+            var fullname = document.getElementById('fullname').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var title = document.getElementById('title').value.trim();
+            var message = document.getElementById('message').value.trim();
+            
+            if (fullname === '' || email === '' || title === '' || message === '') {
+                alert('Please fill out all fields.');
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Toggle between showing and hiding the sidebar when clicking the menu icon
+        var mySidebar = document.getElementById("mySidebar");
+
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+            } else {
+                mySidebar.style.display = 'block';
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+        }
+    </script>
+</body>
+</html>
